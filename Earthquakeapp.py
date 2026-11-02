@@ -90,7 +90,7 @@ tab_map, tab_trends, tab_regions, tab_data = st.tabs(["🗺️ Map", "📈 Trend
 # ---------- Map ----------
 with tab_map:
     view = st.radio("Map view", ["Markers", "Density heatmap"], horizontal=True)
-    m = folium.Map(location=[28.4, 84.1], zoom_start=7, tiles="CartoDB positron")
+    m = folium.Map(location=[28.4, 84.1], zoom_start=7, tiles="OpenStreetMap")
     if view == "Markers":
         shown = f.nlargest(2000, "mag")  # cap markers for performance
         for r in shown.itertuples():
